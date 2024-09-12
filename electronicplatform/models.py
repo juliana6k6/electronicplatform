@@ -50,7 +50,7 @@ class Product(models.Model):
     model = models.CharField(max_length=150, verbose_name='модель', blank=True, null=True, help_text="Укажите модель")
     release_date = models.DateField(verbose_name='дата выхода продукта на рынок', blank=True, null=True,
                                     help_text="Укажите дату выхода продукта на рынок")
-    network_unit = models.ForeignKey(PlatformUnit, on_delete=models.CASCADE, verbose_name='Объект сети')
+    network_unit = models.ForeignKey("PlatformUnit", on_delete=models.CASCADE, verbose_name='Объект сети')
 
     def __str__(self):
         return f'{self.name}, {self.model}'
