@@ -6,7 +6,7 @@ from electronicplatform.views import (PlatformUnitCreateAPIView, PlatformUnitLis
                                       PlatformUnitUpdateAPIView, PlatformUnitDetailAPIView,
                                       PlatformUnitDeleteAPIView, ProductViewSet)
 
-appname = ElectronicplatformConfig.name
+app_name = ElectronicplatformConfig.name
 router = DefaultRouter()
 router.register(r'products', ProductViewSet, basename='products')
 

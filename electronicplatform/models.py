@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class PlatformUnit:
+class PlatformUnit(models.Model):
     """ Модель, описывающая объект сети """
     TYPE_CHOICES = (
         ("завод", "завод"),
