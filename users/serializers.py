@@ -9,6 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
 
+
 class ListUserSerializer(serializers.ModelSerializer):
     """Сериализатор для модели пользователя в списке пользователей"""
 

@@ -47,7 +47,3 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [IsActiveUser]
 
-
-from django.shortcuts import render
-
-# Create your views here.
