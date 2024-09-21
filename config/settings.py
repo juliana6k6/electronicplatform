@@ -164,8 +164,7 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.IsAuthenticated',
     # ],
-
-     # авторизация для каждого эндпойнта пишется отдельно
+    # авторизация для каждого эндпойнта пишется отдельно
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],

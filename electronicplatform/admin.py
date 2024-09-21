@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.utils.html import format_html
-from django.urls import reverse
+# from django.utils.html import format_html
+# from django.urls import reverse
 
 from .models import PlatformUnit, Product
 
@@ -47,10 +47,6 @@ class PlatformUnitAdmin(admin.ModelAdmin):
     #         return format_html('<a href="{}">{}</a>', url, obj.supplier)
     #     return '-'
     # trader_link.short_description = 'Трейдер'
-
-
-
-
     # def supplier_link(self, obj):
     #     if obj.supplier:
     #         url = f"admin/electronicplatform/supplier/{obj.supplier.id}/change/"
@@ -59,10 +55,7 @@ class PlatformUnitAdmin(admin.ModelAdmin):
     #     return 'Поставщик не указан'
     # supplier_link.short_description = 'Поcтавщик'
 
-
     @admin.action(description="Очистить задолженность перед поставщиком")
     def clear_debt(modeladmin, request, queryset):
         """Действие удаления задолженности"""
         queryset.update(debt=0.00)
-
-

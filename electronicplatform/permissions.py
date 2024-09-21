@@ -8,6 +8,3 @@ class IsActiveUser(BasePermission):
         if not request.user.is_active:
             return False
         return True
-
-
-
