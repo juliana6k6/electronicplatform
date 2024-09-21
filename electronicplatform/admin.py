@@ -1,13 +1,15 @@
 from django.contrib import admin
-# from django.utils.html import format_html
-# from django.urls import reverse
 
 from .models import PlatformUnit, Product
+
+# from django.utils.html import format_html
+# from django.urls import reverse
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     """Отображение продукта в панели администратора"""
+
     list_display = (
         "id",
         "name",
@@ -23,6 +25,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(PlatformUnit)
 class PlatformUnitAdmin(admin.ModelAdmin):
     """Отображение модели единицы платформы в панели администратора"""
+
     list_display = (
         "id",
         "name",
@@ -34,11 +37,14 @@ class PlatformUnitAdmin(admin.ModelAdmin):
         "debt",
         "date_create",
         "email",
-        )
+    )
     list_filter = ("city",)
     search_fields = ("name",)
     actions = ("clear_debt",)
-    list_display_links = ("name", "supplier",)
+    list_display_links = (
+        "name",
+        "supplier",
+    )
 
     # def trader_link(self, obj):
     #     """Ссылка для перехода в карточку трейдера"""
