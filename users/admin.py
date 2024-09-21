@@ -6,4 +6,12 @@ from users.models import User
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     """Отображение торговой сети в панели администратора"""
-    list_display = ('id', 'email', 'is_active', 'is_superuser', "first_name", "last_name")
+
+    list_display = (
+        "id",
+        "email",
+        "is_active",
+        "is_superuser",
+        "first_name",
+        "last_name",
+    )

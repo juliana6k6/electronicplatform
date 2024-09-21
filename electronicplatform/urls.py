@@ -2,17 +2,24 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 from electronicplatform.apps import ElectronicplatformConfig
-from electronicplatform.views import (PlatformUnitCreateAPIView, PlatformUnitListAPIView,
-                                      PlatformUnitUpdateAPIView, PlatformUnitDetailAPIView,
-                                      PlatformUnitDeleteAPIView, ProductViewSet)
+from electronicplatform.views import (
+    PlatformUnitCreateAPIView,
+    PlatformUnitDeleteAPIView,
+    PlatformUnitDetailAPIView,
+    PlatformUnitListAPIView,
+    PlatformUnitUpdateAPIView,
+    ProductViewSet,
+)
 
 app_name = ElectronicplatformConfig.name
 router = DefaultRouter()
-router.register(r'products', ProductViewSet, basename='products')
+router.register(r"products", ProductViewSet, basename="products")
 
 
 urlpatterns = [
-    path("platformunitlist/", PlatformUnitListAPIView.as_view(), name="platformunitlist"),
+    path(
+        "platformunitlist/", PlatformUnitListAPIView.as_view(), name="platformunitlist"
+    ),
     path(
         "platformunit/<int:pk>/",
         PlatformUnitDetailAPIView.as_view(),
@@ -21,7 +28,7 @@ urlpatterns = [
     path(
         "platformunit/create/",
         PlatformUnitCreateAPIView.as_view(),
-        name="platformunit-create"
+        name="platformunit-create",
     ),
     path(
         "platformunit/<int:pk>/update/",
